@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Organ Donation</title>
+    <script>
+        function change(e){
+            const btn = document.getElementsByClassName("donor-select-btn")[0];
+            const input = document.getElementById("donor");
+            const options = document.getElementsByClassName("options")[0]
+
+            btn.innerHTML = e.dataset.name;
+            input.value = e.dataset.id;
+            options.style.display = "none";
+        }
+        window.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementsByClassName("donor-select-btn")[0].addEventListener("click",()=>{
+                const options = document.getElementsByClassName("options")[0];
+                options.style.display = options.style.display === "none" ? "flex" : "none";
+            })
+        });
+
+    </script>
+</head>
+<body>
+    <div class="bg">
+        <nav>
+            <div class="title">
+                Organ Donation
+            </div>
+            <a class="nav-link active" href="/">
+                Create Patient
+            </a>
+            <a class="nav-link" href="/donor/create">
+                Create Donor
+            </a>
+            <a class="nav-link" href="/donors"> 
+                Donors
+            </a>
+            <a class="nav-link" href="/patients">
+                Patients
+            </a>
+        </nav>
+        <section class="form">
+            <h1 class="form-title">Create Patient</h1>
+            <form action="" method="post">
+                <input type="text" placeholder="Name" name = "name">
+                <input type="text" placeholder="Age" name = "age">
+                <div class="gender">
+                <span class="gender-label">Gender:</span>
+                <label class="container">Male 
+                    <input type="radio" checked="checked" name="gender" value="male">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Female
+                    <input type="radio" name="gender" value="female">
+                    <span class="checkmark"></span>
+                </label>
+                </div>
+                <input type="text" placeholder="Blood Group" name="blood">
+                <input type="text" placeholder="Phone No" name="phone">
+                <input type="text" placeholder="Organ" name="organ">
+                <input type="text" placeholder="City" name="city">
+                <input type="text" name="donor" style="display: none;" id="donor">
+                <div class="donor-select">
+                    <div class="donor-select-btn">Donor</div>
+                    <div class="options" style="display: none;">
+                        <% donors.forEach(donor=>{ %> 
+                        <div class="option" data-id="<%= donor._id %>" data-name="<%= donor.name %>" onclick="change(this)"><%= donor.name %></div>
+                        <% }) %> 
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Create</button>
+            </form>
+        </section>
+    </div>
+    <div class="bg"></div>
+</body>
+</html>

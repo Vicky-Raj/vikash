@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Organ Donation</title>
+</head>
+<body>
+    <div class="bg">
+        <nav>
+            <div class="title">
+                Organ Donation
+            </div>
+            <a class="nav-link" href="/">
+                Create Patient
+            </a>
+            <a class="nav-link" href="/donor/create">
+                Create Donor
+            </a>
+            <a class="nav-link" href="/donors"> 
+                Donors
+            </a>
+            <a class="nav-link" href="/patients">
+                Patients
+            </a>
+        </nav>
+        <div class="detail-con">
+            <% if(donor) {%> 
+            <form action="/donor/<%= donor._id %>" method="POST">
+            <div class="detail-card">
+                <h1 class="form-title">Donor Details</h1>
+                <div class="detail">
+                    <span class="detail-left">Name:</span>
+                    <span class="detail-right"><%= donor.name %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Age:</span>
+                    <span class="detail-right"><%= donor.age %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Gender:</span>
+                    <span class="detail-right"><%= donor.gender %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Blood Group:</span>
+                    <span class="detail-right"><%= donor.blood %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Phone No:</span>
+                    <span class="detail-right"><%= donor.phone %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Organ:</span>
+                    <span class="detail-right"><%= donor.organ %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">City:</span>
+                    <span class="detail-right"><%= donor.city %></span>
+                </div>
+                    <button class="delete" type="submit">DELETE</button>
+            </div>  
+            </form>
+        <% } %> 
+        </div>
+    </div>
+    <div class="bg"></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Organ Donation</title>
+</head>
+<body>
+    <div class="bg">
+        <nav>
+            <div class="title">
+                Organ Donation
+            </div>
+            <a class="nav-link" href="/">
+                Create Patient
+            </a>
+            <a class="nav-link active" href="/donor/create">
+                Create Donor
+            </a>
+            <a class="nav-link" href="/donors"> 
+                Donors
+            </a>
+            <a class="nav-link" href="/patients">
+                Patients
+            </a>
+        </nav>
+        <section class="form">
+            <h1 class="form-title">Create Donor</h1>
+            <form action="/donor/create" method="post">
+                <input type="text" placeholder="Name" name = "name">
+                <input type="text" placeholder="Age" name = "age">
+                <div class="gender">
+                <span class="gender-label">Gender:</span>
+                <label class="container">Male 
+                    <input type="radio" checked="checked" name="gender" value="male">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">Female
+                    <input type="radio" name="gender" value="female">
+                    <span class="checkmark"></span>
+                </label>
+                </div>
+                <input type="text" placeholder="Blood Group" name="blood">
+                <input type="text" placeholder="Phone No" name="phone">
+                <input type="text" placeholder="Organ" name="organ">
+                <input type="text" placeholder="City" name="city">
+                <button type="submit" class="submit-btn">Create</button>
+            </form>
+        </section>
+    </div>
+    <div class="bg"></div>
+</body>
+</html>

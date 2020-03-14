@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Organ Donation</title>
+</head>
+<body>
+    <div class="bg">
+        <nav>
+            <div class="title">
+                Organ Donation
+            </div>
+            <a class="nav-link" href="/">
+                Create Patient
+            </a>
+            <a class="nav-link" href="/donor/create">
+                Create Donor
+            </a>
+            <a class="nav-link" href="/donors"> 
+                Donors
+            </a>
+            <a class="nav-link" href="/patients">
+                Patients
+            </a>
+        </nav>
+        <div class="detail-con">
+            <% if(patient) {%> 
+            <div class="detail-card">
+                <h1 class="form-title">Patient Details</h1>
+                <form action="/patient/<%= patient._id %>" method="post">
+                <div class="detail">
+                    <span class="detail-left">Name:</span>
+                    <span class="detail-right"><%= patient.name %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Age:</span>
+                    <span class="detail-right"><%= patient.age %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Gender:</span>
+                    <span class="detail-right"><%= patient.gender %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Blood Group:</span>
+                    <span class="detail-right"><%= patient.blood %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Phone No:</span>
+                    <span class="detail-right"><%= patient.phone %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Organ:</span>
+                    <span class="detail-right"><%= patient.organ %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">City:</span>
+                    <span class="detail-right"><%= patient.city %></span>
+                </div>
+                <button class="delete" type="submit">DELETE</button>
+                </form>
+            </div>  
+            <div class="detail-card">
+                <h1 class="form-title">Donor Details</h1>
+                <div class="detail">
+                    <span class="detail-left">Name:</span>
+                    <span class="detail-right"><%= patient.donor.name %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Age:</span>
+                    <span class="detail-right"><%= patient.donor.age %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Gender:</span>
+                    <span class="detail-right"><%= patient.donor.gender %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Blood Group:</span>
+                    <span class="detail-right"><%= patient.donor.blood %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Phone No:</span>
+                    <span class="detail-right"><%= patient.donor.phone %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">Organ:</span>
+                    <span class="detail-right"><%= patient.donor.organ %></span>
+                </div>
+                <div class="detail">
+                    <span class="detail-left">City:</span>
+                    <span class="detail-right"><%= patient.donor.city %></span>
+                </div>
+            </div>
+            <% } %>  
+        </div>
+    </div>
+    <div class="bg"></div>
+</body>
+</html>

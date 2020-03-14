@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Organ Donation</title>
+</head>
+<body>
+    <div class="bg">
+        <nav>
+            <div class="title">
+                Organ Donation
+            </div>
+            <a class="nav-link" href="/">
+                Create Patient
+            </a>
+            <a class="nav-link" href="/donor/create">
+                Create Donor
+            </a>
+            <a class="nav-link" href="/donors"> 
+                Donors
+            </a>
+            <a class="nav-link active" href="/patients">
+                Patients
+            </a>
+        </nav>  
+        <h1 class="donors-title">Patients</h1>
+        <div class="donor-con">
+            <% patients.forEach(patient=>{%> 
+            <div class="card">
+                <div class="name">
+                    <span class="name-left">Name:</span>
+                    <span class="name-right"><%= patient.name %></span>
+                </div>
+                <div class="name">
+                    <span class="name-left">Organ:</span>
+                    <span class="name-right"><%= patient.organ %></span>
+                </div>
+                <a href="/patient/<%=patient._id%>" class="more">See More</a>
+            </div>
+        <% }) %> 
+        </div>
+    </div>
+    <div class="bg"></div>
+</body>
+</html>

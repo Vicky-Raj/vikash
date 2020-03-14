@@ -1,0 +1,330 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: #999;
+}
+
+.bg{
+    width: 100%;
+    height:100vh;
+    background: linear-gradient(to bottom right,rgba(0,0,0,0.8),rgba(0,0,0,0.4))
+    ,url("/assets/bg.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+}
+
+
+nav{
+    height: 5rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter:blur(30px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    color: #ecf0f1;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-left: 2.5rem;
+}
+
+.form{
+    text-align: center;
+    width: 60rem;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    margin:auto;
+    margin-top: 2rem;
+    border-radius:10px;
+}
+
+.form-title{
+    color:#ecf0f1;
+    font-size: 3rem;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-top: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+input{
+    box-sizing: border-box;
+    display: block;
+    margin:auto;
+    border:none;
+    outline:none;
+    background:  rgba(255, 255, 255, 0.15);
+    width:70%;
+    height: 4.5rem;
+    border-radius: 7px;
+    color:#fff;
+    font-size: 3rem;
+    padding:5px;
+    margin-top: 2rem;
+}
+
+input::placeholder{
+    color:rgba(255,255,255,0.3)
+
+}
+
+.container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-right: 10px;
+    margin-top:2rem;
+  }
+  
+  /* Hide the browser's default radio button */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: rgba(255,255,255,0.3);
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container .checkmark:after {
+       top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
+
+.gender{
+      width: 60%;
+      margin:auto;
+}
+
+.gender-label{
+    display: inline;
+    margin-right: 10px;
+    font-size: 2.5rem;
+}
+
+.submit-btn{
+    outline: none;
+    border:none;
+    width: 12rem;
+    height: 5rem;
+    background: #DF2359;
+    color: #fff;
+    margin-top:2rem;
+    margin-bottom: 2rem;
+    border-radius: 6px;
+    box-shadow: 0px 4px 20px rgba(223,35,89,0.4);
+}
+
+.submit-btn:hover{
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+.donor-select{
+    box-sizing: border-box;
+    display: block;
+    margin:auto;
+    margin-top: 2rem;
+    width:70%;
+    height: 4.5rem;
+    background:  rgba(255, 255, 255, 0.15);
+    border-radius: 7px;
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 1px;
+    position: relative;
+}
+.donor-select:hover{
+    cursor: pointer;
+}
+
+
+.options{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    z-index: 2;
+    top:48px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.4);
+
+}
+.option{
+    z-index: 3;
+    height: 3rem;
+    font-size: 2rem;
+    background: #fff;
+    color: #555;
+    border-bottom: 1px solid black;
+}
+
+.option:hover{
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+.donor-select-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    color: #fff;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 2rem;
+    color: crimson;
+    margin-left: 2rem;
+    text-decoration: none;
+}
+
+.active{
+    text-decoration: underline;
+}
+
+.donors-title{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 3rem;
+    color: #fff;
+}
+
+.donor-con{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8rem;
+}
+
+.card{
+    box-sizing: border-box;
+    background:  rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 7px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5rem;
+    margin-bottom: 3rem;
+}
+
+.name{
+    margin-bottom: 2rem;
+}
+
+.name-left{
+    font-size: 3rem;
+}
+
+.name-right{
+    color:#fff;
+    font-size: 3rem;
+    margin-left: .5rem;
+}
+
+.more{
+    text-decoration: none;
+    color:crimson;
+    font-size: 2rem;
+}
+
+.detail-con{
+    display: flex;
+    justify-content: space-around;
+    padding:0 10rem;
+}
+
+.detail-card{
+    position: relative;
+    padding: 5rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    margin:auto;
+    margin-top: 8rem;
+    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-left{
+    font-size: 3rem;
+    margin-right: 1rem;
+}
+.detail-right{
+    color: #fff;
+    font-size: 3rem;
+}
+
+.delete{
+    border:none;
+    outline: none;
+    text-decoration: none;
+    position: absolute;
+    right:2rem;
+    top:2rem;
+    color: crimson;
+    font-size: 1.8rem;
+    background: transparent;
+}
+.delete:hover{
+    cursor: pointer;
+}
